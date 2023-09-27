@@ -11,16 +11,18 @@ interface DesktopItemProps {
 }
 
 const DesktopItem: React.FC<DesktopItemProps> = ({label, href, icon: Icon, active, onClick}) => {
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
     if (onClick) {
-      return onClick();
+      e.preventDefault();
+      onClick();
     }
   };
 
   return (
-    <li onClick={handleClick} key={label}>
+    <li key={label}>
       <Link
         href={href}
+        onClick={handleClick}
         className={clsx(`
             group 
             flex 
