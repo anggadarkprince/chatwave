@@ -70,7 +70,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({isOpen, onClose, currentUs
               Edit your public information.
             </p>
 
-            <div className="mt-4 flex flex-col gap-y-8">
+            <div className="mt-4 flex flex-col gap-y-4">
               <Input
                 disabled={isLoading}
                 label="Name"

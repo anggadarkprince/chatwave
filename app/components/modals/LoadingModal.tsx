@@ -2,7 +2,7 @@
 
 import React, { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ClipLoader } from 'react-spinners';
+import { PulseLoader } from 'react-spinners';
 
 const LoadingModal = () => {
   return (
@@ -32,7 +32,7 @@ const LoadingModal = () => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel>
-                <ClipLoader size={40} color="#0284c7" />
+                <PulseLoader size={20} color="#0284c7" />
               </Dialog.Panel>
             </Transition.Child>
           </div>
