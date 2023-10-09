@@ -6,11 +6,11 @@ import {  User } from "@prisma/client";
 import Avatar from "@/app/components/Avatar";
 import LoadingModal from "@/app/components/modals/LoadingModal";
 
-interface UserBoxProps {
+interface UserItemProps {
   data: User
 }
 
-const UserBox: React.FC<UserBoxProps> = ({data}) => {
+const UserItem: React.FC<UserItemProps> = ({data}) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,16 +27,14 @@ const UserBox: React.FC<UserBoxProps> = ({data}) => {
   return (
     <>
       {isLoading && (<LoadingModal />)}
-      <div onClick={handleClick} className="w-full relative flex items-center space-x-3 bg-white p-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer">
+      <div onClick={handleClick} className="w-full relative flex items-center space-x-3 bg-white py-2 px-3 hover:bg-neutral-100 rounded-lg transition cursor-pointer">
         <Avatar user={data} />
-        <div className="min-w-0 flex-1">
-          <div className="focus:outline-none">
-            <span className="absolute inset-0" aria-hidden="true" />
-            <div className="flex justify-between items-center mb-1">
-              <p className="text-sm font-medium text-gray-900">
-                {data.name}
-              </p>
-            </div>
+        <div className="min-w-0 flex-1 focus:outline-none">
+          <div className="flex flex-col mb-1">
+            <p className="text-sm font-medium text-gray-900">
+              {data.name}
+            </p>
+            <span className="truncate text-sm text-gray-400">{data.email}</span>
           </div>
         </div>
       </div>
@@ -44,4 +42,4 @@ const UserBox: React.FC<UserBoxProps> = ({data}) => {
   );
 }
 
-export default UserBox;
+export default UserItem;

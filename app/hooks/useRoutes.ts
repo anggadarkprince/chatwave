@@ -1,9 +1,13 @@
 import {useMemo} from "react";
 import {usePathname} from "next/navigation";
 import {HiOutlineChat, HiOutlineUserCircle} from 'react-icons/hi';
-import {RiLogoutCircleLine} from 'react-icons/ri';
 import {signOut} from "next-auth/react";
 import useConversation from "./useConversation";
+import {BiLogOut} from "react-icons/bi";
+import {FiUsers} from "react-icons/fi";
+import {RiChatHistoryLine, RiSettings4Line, RiSettingsLine} from "react-icons/ri";
+import {MdLogout} from "react-icons/md";
+import {LuLogOut, LuSettings, LuSettings2} from "react-icons/lu";
 
 const useRoutes = () => {
   const pathname = usePathname();
@@ -19,14 +23,26 @@ const useRoutes = () => {
     {
       label: 'Users',
       href: '/users',
-      icon: HiOutlineUserCircle,
+      icon: FiUsers,
       active: pathname === '/users'
+    },
+    {
+      label: 'Moments',
+      href: '/moments',
+      icon: RiChatHistoryLine,
+      active: pathname === '/moments'
+    },
+    {
+      label: 'Settings',
+      href: '/settings',
+      icon: LuSettings2,
+      active: pathname === '/settings'
     },
     {
       label: 'Logout',
       onClick: () => signOut(),
       href: '#',
-      icon: RiLogoutCircleLine,
+      icon: LuLogOut,
     }
   ], [pathname, conversationId]);
 };

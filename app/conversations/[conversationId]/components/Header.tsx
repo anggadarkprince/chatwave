@@ -4,7 +4,7 @@ import { Conversation, User } from "@prisma/client";
 import React, {useMemo, useState} from "react";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import Link from "next/link";
-import {HiChevronLeft} from "react-icons/hi2";
+import {HiChevronLeft, HiEllipsisVertical} from "react-icons/hi2";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import Avatar from "@/app/components/Avatar";
 import {HiEllipsisHorizontal} from "react-icons/hi2";
@@ -36,10 +36,10 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       />
-      <div className="bg-white w-full flex border-b-[1px] sm:px-4 py-3 px-4 lg:px-6 justify-between items-center shadow-sm">
+      <div className="bg-white w-full flex border-b-[1px] sm:px-3 py-2 px-2 lg:px-4 justify-between items-center shadow-sm">
         <div className="flex gap-3 items-center">
-          <Link href="/conversations" className="lg:hidden block text-sky-500 hover:text-sky-600 transition cursor-pointer">
-            <HiChevronLeft size={32} />
+          <Link href="/conversations" className="lg:hidden block text-gray-600 hover:text-gray-800 transition cursor-pointer">
+            <HiChevronLeft size={28} />
           </Link>
           {conversation.isGroup ? (
             <AvatarGroup users={conversation.users} />
@@ -53,10 +53,10 @@ const Header: React.FC<HeaderProps> = ({ conversation }) => {
             </div>
           </div>
         </div>
-        <HiEllipsisHorizontal
-          size={32}
+        <HiEllipsisVertical
+          size={28}
           onClick={() => setDrawerOpen(true)}
-          className="text-sky-500 cursor-pointer hover:text-sky-600 transition"
+          className="cursor-pointer text-gray-600 hover:text-gray-800 transition"
         />
       </div>
     </>

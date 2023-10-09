@@ -18,7 +18,7 @@ const AvatarGroup: React.FC<AvatarGroupProps> = ({users = []}) => {
   }
 
   return (
-    <div className="relative h-11 w-11">
+    <div className="flex relative h-11 w-11">
       {slicedUsers.map((user, index) => (
         <div
           key={user.id}

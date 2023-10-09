@@ -10,7 +10,7 @@ import { find, uniq } from 'lodash';
 
 import useConversation from "@/app/hooks/useConversation";
 import { pusherClient } from "@/app/libs/pusher";
-import ConversationBox from "./ConversationBox";
+import ConversationItem from "./ConversationItem";
 import { FullConversationType } from "@/app/types";
 import GroupChatModal from "@/app/components/modals/GroupChatModal";
 
@@ -89,10 +89,10 @@ const ConversationList: React.FC<ConversationListProps> = ({initialItems, users}
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <aside className={clsx(`fixed inset-y-0 pb-20 lg:pb-0 lg:left-20 lg:w-80 lg:block overflow-y-auto border-r border-gray-200`, isOpen ? 'hidden' : 'block w-full left-0')}>
-        <div className="px-5">
+      <aside className={clsx(`fixed inset-y-0 pb-20 lg:pb-0 lg:left-16 lg:w-[350px] lg:block overflow-y-auto border-r border-gray-200`, isOpen ? 'hidden' : 'block w-full left-0')}>
+        <div className="px-3 space-y-2">
           <div className="flex justify-between mb-4 pt-4">
-            <div className="text-2xl font-bold text-neutral-800">
+            <div className="text-2xl font-semibold text-neutral-800">
               Messages
             </div>
             <div
@@ -103,7 +103,7 @@ const ConversationList: React.FC<ConversationListProps> = ({initialItems, users}
             </div>
           </div>
           {items.map((item) => (
-            <ConversationBox
+            <ConversationItem
               key={item.id}
               data={item}
               selected={conversationId === item.id}

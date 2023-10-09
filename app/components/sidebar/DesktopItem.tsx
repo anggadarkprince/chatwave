@@ -26,9 +26,9 @@ const DesktopItem: React.FC<DesktopItemProps> = ({label, href, icon: Icon, activ
         className={clsx(`
             group 
             flex 
-            gap-x-3 
+            gap-x-2.5 
             rounded-md 
-            p-3 
+            p-2.5 
             text-sm 
             leading-6 
             font-semibold 
