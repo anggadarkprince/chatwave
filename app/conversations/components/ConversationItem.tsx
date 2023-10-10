@@ -80,7 +80,7 @@ const ConversationItem: React.FC<ConversationItemProps> = ({data, selected}) => 
               </p>
           )}
         </div>
-        <p className={clsx(`truncate text-sm`, hasSeen ? 'text-gray-400' : 'text-gray-800')}>
+        <p className={clsx(`truncate text-sm`, hasSeen ? 'text-gray-400' : 'font-medium text-gray-800')}>
           {lastMessageText}
         </p>
       </div>

@@ -4,7 +4,7 @@ import {FullMessageType} from "@/app/types";
 import React, {useEffect, useRef, useState} from "react";
 import useConversation from "@/app/hooks/useConversation";
 import axios from "axios";
-import MessageBox from "@/app/conversations/[conversationId]/components/MessageBox";
+import MessageItem from "@/app/conversations/[conversationId]/components/MessageItem";
 import {pusherClient} from "@/app/libs/pusher";
 import { find } from "lodash";
 
@@ -61,7 +61,7 @@ const Body: React.FC<BodyProps> = ({ initialMessages = [] }) => {
   return (
     <div className="flex-1 overflow-y-auto">
       {messages.map((message, i) => (
-        <MessageBox
+        <MessageItem
           isLast={i === messages.length - 1}
           key={message.id}
           data={message}

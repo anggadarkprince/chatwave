@@ -7,7 +7,6 @@ import Link from "next/link";
 import {HiChevronLeft, HiEllipsisVertical} from "react-icons/hi2";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import Avatar from "@/app/components/Avatar";
-import {HiEllipsisHorizontal} from "react-icons/hi2";
 import ProfileDrawer from "@/app/conversations/[conversationId]/components/ProfileDrawer";
 import useActiveList from "@/app/hooks/useActiveList";
 

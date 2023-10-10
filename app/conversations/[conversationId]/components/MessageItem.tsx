@@ -10,12 +10,12 @@ import { FullMessageType } from "@/app/types";
 import Avatar from "@/app/components/Avatar";
 import ImageModal from "./ImageModal";
 
-interface MessageBoxProps {
+interface MessageItemProps {
   data: FullMessageType;
   isLast?: boolean;
 }
 
-const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
+const MessageItem: React.FC<MessageItemProps> = ({data, isLast}) => {
   const session = useSession();
   const [imageModalOpen, setImageModalOpen] = useState(false);
 
@@ -73,4 +73,4 @@ const MessageBox: React.FC<MessageBoxProps> = ({data, isLast}) => {
   );
 }
 
-export default MessageBox;
+export default MessageItem;
